@@ -1,0 +1,10 @@
+def minimax(depth, is_maximizing, scores): 
+  if depth == len(scores): 
+    return scores[depth - 1] 
+  if is_maximizing: 
+    return max(scores) 
+  else: 
+    return min(scores) 
+scores_str = input("Enter scores separated by spaces or commas: ")
+scores = list(map(int, scores_str.replace(',', ' ').split())) 
+print("Best score:", minimax(0, True, scores)) 
